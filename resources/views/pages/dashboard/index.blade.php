@@ -8,7 +8,7 @@
   <x-partials.header-page title="Dashboard" />
 
   <div class="row">
-    <div class="col-xxl-8 mb-6 order-0">
+    <div class="col-12 mb-6 order-0">
       <div class="card">
         <div class="d-flex align-items-start row">
           <div class="col-sm-7">
@@ -17,7 +17,6 @@
               <p class="mb-5">
                 Anda dapat mengubah data profil Anda dan mengelola data lainnya!
               </p>
-
               <a href="{{ route('profile.index') }}" class="btn btn-sm btn-outline-primary">View Profile</a>
             </div>
           </div>
@@ -29,7 +28,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xxl-4 col-lg-12 col-md-4 order-1">
+    <div class="col-lg-12 order-1">
       <div class="row">
         <div class="col-6 mb-6">
           <div class="card h-100">
@@ -77,10 +76,12 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-xxl-8 order-2 order-md-3 order-xxl-2 mb-6 total-revenue">
+      </div>
+      <div class="row">
+        <div class="col-12 mb-6 total-revenue">
           <div class="card">
             <div class="row row-bordered g-0">
-              <div class="col-lg-8">
+              <div class="col-8">
                 <div class="card-header d-flex align-items-center justify-content-between">
                   <div class="card-title mb-0">
                     <h5 class="m-0 me-2">Total Revenue</h5>
@@ -98,7 +99,7 @@
                 </div>
                 <div id="totalRevenueChart" class="px-3"></div>
               </div>
-              <div class="col-lg-4">
+              <div class="col-4">
                 <div class="card-body px-xl-9 py-12 d-flex align-items-center flex-column">
                   <div class="text-center mb-6">
                     <div class="btn-group">
@@ -156,7 +157,6 @@
         </div>
       </div>
     </div>
-
 
     <x-slot:js>
       <script src="/sneat/vendor/libs/apex-charts/apexcharts.js"></script>

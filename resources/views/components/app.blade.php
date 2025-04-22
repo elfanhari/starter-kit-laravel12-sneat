@@ -19,27 +19,16 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="{{ asset('sneat/img/favicon/favicon.ico') }}" />
-
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="{{ asset('sneat/vendor/fonts/iconify-icons.css') }}" />
-
   <!-- Core CSS -->
-  <!-- build:css sneat/vendor/css/theme.css  -->
-
   <link rel="stylesheet" href="{{ asset('sneat/vendor/css/core.css') }}" />
   <link rel="stylesheet" href="{{ asset('sneat/css/demo.css') }}" />
-
-
   <!-- Vendors CSS -->
-
   <link rel="stylesheet" href="{{ asset('sneat/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
-
-  <!-- endbuild -->
-
   <!-- Page CSS -->
   <link rel="stylesheet" href="{{ asset('customize/css/style.css') }}" />
   <link rel="stylesheet" href="{{ asset('customize/css/loader.css') }}" />
@@ -61,16 +50,12 @@
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
       <!-- Menu -->
-
       <x-sidebar />
-      <!-- / Menu -->
 
       <!-- Layout container -->
       <div class="layout-page">
         <!-- Navbar -->
-
         <x-navbar />
-
         <!-- / Navbar -->
 
         <!-- Content wrapper -->
@@ -78,17 +63,6 @@
           <!-- Content -->
           <div class="container-fluid flex-grow-1 container-p-y">
             {{ $slot }}
-            <!-- Layout Demo -->
-            {{-- <div class="layout-demo-wrapper">
-              <div class="layout-demo-placeholder">
-                <img src="{{ asset('sneat/img/layouts/layout-fluid-light.png') }}" class="img-fluid" alt="Layout fluid" />
-              </div>
-              <div class="layout-demo-info">
-
-                <p>Fluid layout sets a <code>100% width</code> at each responsive breakpoint.</p>
-              </div>
-            </div> --}}
-            <!--/ Layout Demo -->
           </div>
           <!-- / Content -->
 
@@ -96,17 +70,7 @@
           <x-footer />
           <!-- / Footer -->
 
-          <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <x-partials.modal id="modal-logout" title="Logout" class="">
-              <x-slot:body>
-                <p class="mb-0">Apakah anda yakin ingin keluar?</p>
-              </x-slot:body>
-              <x-slot:footer>
-                <button class="btn btn-danger">Ya, keluar</button>
-              </x-slot:footer>
-            </x-partials.modal>
-          </form>
+          @include('pages.auth.logout')
 
           <div class="content-backdrop fade"></div>
         </div>
@@ -119,6 +83,7 @@
 
     <!-- Overlay -->
     <div class="layout-overlay layout-menu-toggle"></div>
+
   </div>
 
 
@@ -127,19 +92,10 @@
   <!-- Core JS -->
 
   <script src="{{ asset('sneat/vendor/libs/jquery/jquery.js') }}"></script>
-
   <script src="{{ asset('sneat/vendor/libs/popper/popper.js') }}"></script>
   <script src="{{ asset('sneat/vendor/js/bootstrap.js') }}"></script>
-
   <script src="{{ asset('sneat/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
-
   <script src="{{ asset('sneat/vendor/js/menu.js') }}"></script>
-
-  <!-- endbuild -->
-
-  <!-- Vendors JS -->
-
-  <!-- Main JS -->
 
   <script src="{{ asset('sneat/js/main.js') }}"></script>
   <script src="{{ asset('customize/js/script.js') }}"></script>
@@ -150,7 +106,7 @@
   <!-- Page JS -->
 
   <!-- Place this tag before closing body tag for github widget button. -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  {{-- <script async defer src="https://buttons.github.io/buttons.js"></script> --}}
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       @foreach (['success' => 'bg-success', 'error' => 'bg-danger', 'warning' => 'bg-warning', 'info' => 'bg-info'] as $key => $type)

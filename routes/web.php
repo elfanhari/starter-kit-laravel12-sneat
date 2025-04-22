@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 // Auth::loginUsingId(2);
 Route::get('/', function () {
   if (Auth::check()) {
-    return redirect('/user')->with('info', 'anda masih dalam sesi');
+    return redirect(route('dashboard.index'))->with('info', 'Anda masih dalam sesi');
   } else {
     // return redirect('/login')->with('info', 'anda belum login');
     return view('welcome');

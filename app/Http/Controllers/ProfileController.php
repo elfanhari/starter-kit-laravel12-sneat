@@ -28,7 +28,7 @@ class ProfileController extends Controller
       'alamat'   => 'nullable|string',
       'email'    => 'required|email|unique:users,email,' . $user->id,
       'password' => 'nullable|string|min:6',
-      'avatar'   => 'nullable|image',
+      'avatar'   => 'nullable|image|max:2048',
     ]);
 
     $data = $validated;
